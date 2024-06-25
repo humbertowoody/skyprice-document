@@ -1,0 +1,289 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                             %
+% Preámbulo del documento                                                     %
+%                                                                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Paquetes para el idioma
+\usepackage[spanish, es-lcroman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Configuraciones para el párrafo
+\usepackage{parskip}
+
+% Paquetes para la tipografía
+\usepackage[linesnumbered,lined,boxed,commentsnumbered]{algorithm2e}
+\usepackage{enumitem,kantlipsum}
+
+% Paquetes para usar fuentes de texto
+\usepackage{array}
+\usepackage{placeins}
+
+% Apéndices
+\usepackage[toc,page]{appendix}
+
+% Tablas
+\usepackage{tabularx}
+
+% Paquetes para las referencias
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{comment}
+
+% http://ctan.org/pkg/booktabs
+\usepackage{booktabs}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+% Paquetes para las imágenes
+\usepackage{graphicx}
+
+% Color
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{colortbl}
+
+% Colores para el documento
+\definecolor{guindapoli}{RGB}{102, 0, 51}
+\definecolor{azulescom}{RGB}{0, 0, 102}
+\definecolor{azulclaro}{RGB}{222, 232, 255}
+\definecolor{azulfuerte}{RGB}{60, 150, 250}
+\definecolor{blanco}{RGB}{255, 255, 255}
+
+% Paquetes para las URL
+\usepackage[hidelinks]{hyperref}
+
+% Paquetes para las referencias
+\usepackage{verbatim}
+
+% Glosario
+\usepackage[acronym]{glossaries}
+
+%%Glosario
+\usepackage{glossaries}
+
+\usepackage{pdfpages}
+
+% Códigos y codificación para caracteres en español
+\usepackage{listings}
+
+% Colores para código por defecto.
+\definecolor{commentcolor}{RGB}{ 192, 192, 192 }
+\definecolor{backcolour}{RGB}{ 249, 249, 249 }
+
+% Estilo para código por defecto.
+\lstdefinestyle{codeStyle}{
+	backgroundcolor=\color{backcolour}, commentstyle=\color{commentcolor},
+	keywordstyle=\color{guindapoli},
+	numberstyle=\tiny\color{azulescom},
+	stringstyle=\color{azulfuerte},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=true,
+	tabsize=3
+}
+
+% Configuración para código por defecto, con caracteres en español.
+\lstset{
+  breaklines=true,
+  %breakatwhitespace=true,
+  %style=codeStyle,
+  literate=
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\`E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {ã}{{\~a}}1 {ẽ}{{\~e}}1 {ĩ}{{\~i}}1 {õ}{{\~o}}1 {ũ}{{\~u}}1
+  {Ã}{{\~A}}1 {Ẽ}{{\~E}}1 {Ĩ}{{\~I}}1 {Õ}{{\~O}}1 {Ũ}{{\~U}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {Ø}{{\O}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+  {»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1 {¡}{{!`}}1
+}
+
+% Definición de lenguaje para JavaScript
+\lstdefinelanguage{javascript}{
+    keywords={break, case, catch, continue, debugger, default, delete, do, else, finally, for, function, if, in, instanceof, new, return, switch, this, throw, try, typeof, var, void, while, with, let, const},
+    sensitive=true,
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]',
+    morestring=[b]",
+    morestring=[b]`,
+    identifierstyle=\color{black}\ttfamily,
+    commentstyle=\color{ipython_cyan}\ttfamily,
+    stringstyle=\color{ipython_red}\ttfamily,
+    keepspaces=true,
+    showspaces=false,
+    showstringspaces=false,
+    rulecolor=\color{ipython_frame},
+    frame=single,
+    frameround={t}{t}{t}{t},
+    framexleftmargin=6mm,
+    numbers=left,
+    numberstyle=\tiny\color{halfgray},
+    backgroundcolor=\color{ipython_bg},
+    %extendedchars=true,
+    basicstyle=\scriptsize,
+    keywordstyle=\color{ipython_green}\ttfamily,
+}
+
+% Definición de lenguaje para Dockerfile
+\lstdefinelanguage{dockerfile}{
+  morekeywords={FROM, RUN, CMD, LABEL, MAINTAINER, EXPOSE, ENV, ADD, COPY, ENTRYPOINT, VOLUME, USER, WORKDIR, ARG, ONBUILD, STOPSIGNAL, HEALTHCHECK, SHELL},
+  morecomment=[l]{\#},
+  morestring=[b]"
+  identifierstyle=\color{black}\ttfamily,
+  commentstyle=\color{ipython_cyan}\ttfamily,
+  stringstyle=\color{ipython_red}\ttfamily,
+  keepspaces=true,
+  showspaces=false,
+  showstringspaces=false,
+  rulecolor=\color{ipython_frame},
+  frame=single,
+  frameround={t}{t}{t}{t},
+  framexleftmargin=6mm,
+  numbers=left,
+  numberstyle=\tiny\color{halfgray},
+  backgroundcolor=\color{ipython_bg},
+  %extendedchars=true,
+  basicstyle=\scriptsize,
+  keywordstyle=\color{ipython_green}\ttfamily,
+}
+
+% Configuración para código en JSON.
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    literate=
+     *{0}{{{\color{azulfuerte}0}}}{1}
+      {1}{{{\color{azulfuerte}1}}}{1}
+      {2}{{{\color{azulfuerte}2}}}{1}
+      {3}{{{\color{azulfuerte}3}}}{1}
+      {4}{{{\color{azulfuerte}4}}}{1}
+      {5}{{{\color{azulfuerte}5}}}{1}
+      {6}{{{\color{azulfuerte}6}}}{1}
+      {7}{{{\color{azulfuerte}7}}}{1}
+      {8}{{{\color{azulfuerte}8}}}{1}
+      {9}{{{\color{azulfuerte}9}}}{1}
+      {:}{{{\color{azulfuerte}{:}}}}{1}
+      {,}{{{\color{azulfuerte}{,}}}}{1}
+      {\{}{{{\color{azulfuerte}{\{}}}}{1}
+      {\}}{{{\color{azulfuerte}{\}}}}}{1}
+      {[}{{{\color{azulfuerte}{[}}}}{1}
+      {]}{{{\color{azulfuerte}{]}}}}{1},
+    identifierstyle=\color{black}\ttfamily,
+    commentstyle=\color{ipython_cyan}\ttfamily,
+    stringstyle=\color{ipython_red}\ttfamily,
+    keepspaces=true,
+    showspaces=false,
+    %showstringspaces=false,
+    rulecolor=\color{ipython_frame},
+    %frame=single,
+    frameround={t}{t}{t}{t},
+    framexleftmargin=6mm,
+    %numbers=left,
+    numberstyle=\tiny\color{halfgray},
+    backgroundcolor=\color{ipython_bg},
+    %extendedchars=true,
+    basicstyle=\scriptsize,
+    keywordstyle=\color{ipython_green}\ttfamily,
+}
+
+% Configuración para código en Bash.
+\lstdefinelanguage{bash}{
+  morekeywords={access,and,break,class,continue,def,del,elif,else,except,exec,finally,for,from,global,if,import,in,is,lambda,not,or,pass,print,raise,return,try,while},
+  morekeywords=[2]{abs,all,any,basestring,bin,bool,bytearray,callable,chr,classmethod,cmp,compile,complex,delattr,dict,dir,divmod,enumerate,eval,execfile,file,filter,float,format,frozenset,getattr,globals,hasattr,hash,help,hex,id,input,int,isinstance,issubclass,iter,len,list,locals,long,map,max,memoryview,min,next,object,oct,open,ord,pow,property,range,raw_input,reduce,reload,repr,reversed,round,set,setattr,slice,sorted,staticmethod,str,sum,super,tuple,type,unichr,unicode,vars,xrange,zip,apply,buffer,coerce,intern},
+  morekeywords=[3]{jq}
+  sensitive=true,
+  morecomment=[l]{\#},
+  morestring=[b]',
+  morestring=[b]",
+  morestring=[s]{'''}{'''},
+  morestring=[s]{"""}{"""},
+  identifierstyle=\color{black}\ttfamily,
+  commentstyle=\color{ipython_cyan}\ttfamily,
+  stringstyle=\color{ipython_red}\ttfamily,
+  keepspaces=true,
+  showspaces=false,
+  showstringspaces=false,
+  rulecolor=\color{ipython_frame},
+  frame=single,
+  frameround={t}{t}{t}{t},
+  framexleftmargin=6mm,
+  numbers=left,
+  numberstyle=\tiny\color{halfgray},
+  backgroundcolor=\color{ipython_bg},
+  %extendedchars=true,
+  basicstyle=\scriptsize,
+  keywordstyle=\color{ipython_green}\ttfamily,
+}
+
+% Configuración para código en Python.
+
+% Colores para código en Python.
+\definecolor{maroon}{cmyk}{0, 0.87, 0.68, 0.32}
+\definecolor{halfgray}{gray}{0.55}
+\definecolor{ipython_frame}{RGB}{207, 207, 207}
+\definecolor{ipython_bg}{RGB}{247, 247, 247}
+\definecolor{ipython_red}{RGB}{186, 33, 33}
+\definecolor{ipython_green}{RGB}{0, 128, 0}
+\definecolor{ipython_cyan}{RGB}{64, 128, 128}
+\definecolor{ipython_purple}{RGB}{170, 34, 255}
+
+% Definición de lenguaje para código en Python.
+\lstdefinelanguage{python}{
+	morekeywords={access,and,break,class,continue,def,del,elif,else,except,exec,finally,for,from,global,if,import,in,is,lambda,not,or,pass,print,raise,return,try,while},
+	morekeywords=[2]{abs,all,any,basestring,bin,bool,bytearray,callable,chr,classmethod,cmp,compile,complex,delattr,dict,dir,divmod,enumerate,eval,execfile,file,filter,float,format,frozenset,getattr,globals,hasattr,hash,help,hex,id,input,int,isinstance,issubclass,iter,len,list,locals,long,map,max,memoryview,min,next,object,oct,open,ord,pow,property,range,raw_input,reduce,reload,repr,reversed,round,set,setattr,slice,sorted,staticmethod,str,sum,super,tuple,type,unichr,unicode,vars,xrange,zip,apply,buffer,coerce,intern},
+	sensitive=true,
+	morecomment=[l]\#,
+	morestring=[b]',
+	morestring=[b]",
+	morestring=[s]{'''}{'''},
+	morestring=[s]{"""}{"""},
+	morestring=[s]{r'}{'},
+	morestring=[s]{r"}{"},
+	morestring=[s]{r'''}{'''},
+	morestring=[s]{r"""}{"""},
+	morestring=[s]{u'}{'},
+	morestring=[s]{u"}{"},
+	morestring=[s]{u'''}{'''},
+	morestring=[s]{u"""}{"""},
+	identifierstyle=\color{black}\ttfamily,
+	commentstyle=\color{ipython_cyan}\ttfamily,
+	stringstyle=\color{ipython_red}\ttfamily,
+	keepspaces=true,
+	showspaces=false,
+	showstringspaces=false,
+	rulecolor=\color{ipython_frame},
+	frame=single,
+	frameround={t}{t}{t}{t},
+	framexleftmargin=6mm,
+	numbers=left,
+	numberstyle=\tiny\color{halfgray},
+	backgroundcolor=\color{ipython_bg},
+  extendedchars=true,
+	basicstyle=\scriptsize,
+	keywordstyle=\color{ipython_green}\ttfamily,
+}
+
+% Paquete para unidades
+\usepackage{siunitx}
+

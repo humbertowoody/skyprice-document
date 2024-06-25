@@ -1,0 +1,248 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                             %
+% Trabajo Terminal 2024-A053                                                  %
+%                                                                             %
+% Estimación de precios de mercado de departamentos en la Ciudad de México    %
+%                                                                             %
+% Alumno: Humberto Alejandro Ortega Alcocer                                   %
+% Director: Mtro. Ariel López Rojas                                           %
+%                                                                             %
+% Escuela Superior de Cómputo                                                 %
+% Instituto Politécnico Nacional                                              %
+%                                                                             %
+% 2023 - 2024                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Configuración del documento
+% !TeX program = pdflatex
+% !TeX encoding = UTF-8
+% !TeX root = 2024-A053.tex
+% !TeX spellcheck = es_MX
+
+% Define el tipo de documento
+\documentclass[12pt, a4paper, titlepage]{report} % Formato de reporte
+
+% Importamos el preámbulo
+\input{preamble}
+
+% Importamos el glosario
+\input{glosario}
+
+% Importamos los acrónimos
+\input{acronimos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                             %
+% Inicio del documento                                                        %
+%                                                                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                             %
+% Portada                                                                     %
+%                                                                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+  \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+  \begin{minipage}{0.48\textwidth}
+    \begin{flushleft}
+      \includegraphics[scale = 0.10]{imagenes/logotipos/escom.png}
+    \end{flushleft}\end{minipage}
+    \begin{minipage}{0.48\textwidth} \begin{flushright}
+      \includegraphics[scale = 0.55]{imagenes/logotipos/ipn.png}
+    \end{flushright}
+  \end{minipage}
+  \vspace*{.25cm}
+  \begin{center}
+    \begin{LARGE}
+      \textcolor{guindapoli}{Instituto Politécnico Nacional}\\
+    \end{LARGE}
+    \vspace*{0.2in}
+    \begin{Large}
+      \textcolor{azulescom}{Escuela Superior de Cómputo}\\
+    \end{Large}
+    \vspace*{0.4in}
+    \begin{large}
+      Trabajo Terminal
+    \end{large}
+
+    \vspace*{0.2in}
+
+    \begin{Large}
+      \textbf{Plataforma web para la estimación de precios de mercado de departamentos en la Ciudad de México}\\
+    \end{Large}
+    \vspace*{0.2in}
+    \begin{large}
+      No. 2024-A053\\
+    \end{large}
+    \vspace*{0.2in}
+    \rule{80mm}{.1mm}\\
+    \vspace*{0.1in}
+    \begin{large}
+      \begin{center}
+        \textbf{Presenta}:\\
+        Humberto Alejandro Ortega Alcocer\\
+      \end{center}
+    \end{large}
+    \begin{large}
+      \textbf{Director}:\\
+      Ariel López Rojas\\
+    \end{large}
+  \end{center}
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                             %
+% Firmas de Directores                                                        %
+%                                                                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \newpage
+  \section*{\textcolor{azulescom}{Firma de Director}}
+  \vfill
+  \noindent
+  \parbox[b]{0.4\linewidth}{
+    \strut
+    Firmado por: \\[3cm]
+    \hrule
+    \vspace*{0.1in}
+    Ariel López Rojas}
+  \hfill
+  \vfill
+  \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                             %
+% Agradecimientos                                                             %
+%                                                                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{\textcolor{azulescom}{Agradecimientos}}
+%\addcontentsline{toc}{section}{Agradecimientos}
+
+{\setlength{\parindent}{15pt}
+\indent En primer lugar, agradezco al Instituto Politécnico Nacional (IPN) y a
+la Escuela Superior de Cómputo (ESCOM) por brindarme la oportunidad y los
+recursos necesarios para formarme como profesional y llevar a cabo este proyecto.}
+
+Quiero expresar mi más profundo agradecimiento a mi director de trabajo terminal,
+Ariel López Rojas, por su invaluable apoyo, orientación y paciencia a lo largo
+de este proyecto. Su experiencia y dedicación han sido fundamentales para la
+culminación de este trabajo.
+
+A mi familia, les agradezco desde el fondo de mi corazón por su amor
+incondicional y por estar siempre a mi lado, brindándome la fuerza y el ánimo
+necesarios en cada etapa de mi vida académica. En particular, quiero mencionar
+con especial cariño a mi madre, Lourdes, quien ha sido mi principal
+fuente de inspiración y motivación. A mis abuelos, Lourdes y Alejandro, cuyo
+sabio consejo y apoyo constante me han guiado siempre. A mi hermano, Gerardo,
+por su comprensión y respaldo incondicional.
+
+A Maura, cuya comprensión y afecto han sido fundamentales para llegar
+hasta aquí. Su amor y apoyo han sido una fuente constante de fortaleza.
+
+A mis amigos, gracias por su inquebrantable apoyo moral y por
+creer en mí incluso en los momentos más difíciles. Su compañía y aliento han
+sido esenciales para llegar hasta aquí.
+
+Este logro es también de ustedes. Gracias a todos.
+
+\vspace{1cm}
+
+\begin{flushright}
+\textbf{Humberto Alejandro Ortega Alcocer}
+\end{flushright}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                             %
+% Índice                                                                      %
+%                                                                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Cambiar nombre de Apéndice a Índice
+  \renewcommand\appendixpagename{Índice}
+  \renewcommand\appendixtocname{Índice}
+
+  \appendixpageoff
+
+  \begin{appendices}
+    \renewcommand*\contentsname{{\textcolor{azulescom}{Índice.}}}
+    \tableofcontents
+    \newpage
+
+    % Índice de figuras
+    \renewcommand*\listfigurename{{\textcolor{azulescom}{Índice de figuras.}}}
+    \listoffigures
+    \newpage
+
+    % Índice de tablas
+    \newpage
+    \renewcommand*\listtablename{{\textcolor{azulescom}{Índice de cuadros.}}}
+    \listoftables
+
+  \end{appendices}
+  \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                             %
+% Secciones del documento                                                     %
+%                                                                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \input{sections/01-introduccion}
+  \input{sections/02-marco-teorico}
+  \input{sections/03-analisis}
+  \input{sections/04-diseno}
+  \input{sections/05-implementacion}
+  \input{sections/06-conclusiones}
+  \input{sections/07-trabajo-futuro}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                             %
+% Apénidces                                                                   %
+%                                                                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Rename Appendice to Anexos
+\renewcommand*\appendixpagename{{\textcolor{azulescom}{Anexos}}}
+\renewcommand*\appendixtocname{{\textcolor{azulescom}{Anexos}}}
+\pagebreak
+\appendixpageon
+\begin{appendices}
+  % Código fuente entrenamiento
+  \newpage
+  \section{Código fuente para preprocesamiento de datos y entrenamiento de modelos}
+  \lstinputlisting[language=Python, label={lst:entrenamiento}]{./anexos/entrenar-modelos.py}
+
+  % Código fuente de la API
+  \newpage
+  \section{Código fuente de la API}
+  \lstinputlisting[language=Python, label={lst:api}]{./anexos/main.py}
+
+	% Glosario
+	\newpage
+	\renewcommand*\glossaryname{{\textcolor{azulescom}{Glosario}}}
+	\printglossary
+
+	%%Acrónimos
+	\newpage
+	\renewcommand*\glossaryname{{\textcolor{azulescom}{Acrónimos}}}
+	\printglossary[title={\textcolor{azulescom}{Acrónimos}}, type=\acronymtype]
+
+\end{appendices}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                      											  %
+% Bibliografía 																							                  %
+%                                                      											  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliography{bib/referencias}
+\bibliographystyle{IEEEtran}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                             %
+% Fin del documento                                                           %
+%                                                                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
+% Humberto Alejandro Ortega Alcocer
